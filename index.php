@@ -33,7 +33,7 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <center>
-                    <img src="img/homepage/1.jpg" alt="Romia" height="500" width="1200">
+                    <img src="img/homepage/5.jpg" alt="Romia" height="500" width="1200">
 
                     <div class="carousel-caption">
                         <h3>FundHive</h3>
@@ -54,7 +54,7 @@
 
             <div class="item">
                 <center>
-                    <img src="img/homepage/3.jpg" alt="Alternaing" height="500" width="1200">
+                    <img src="img/homepage/rating.jpg" alt="Alternaing" height="500" width="1200">
                     <div class="carousel-caption">
                         <h3>Rate Projects</h3>
                         <p>Rate Projects from other users and help them with your suggestion</p>
