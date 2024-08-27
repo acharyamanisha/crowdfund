@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,11 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,10 +26,9 @@
     <!--<link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />-->
     <script src="js/star-rating.js" type="text/javascript"></script>
     <style>
-        .glyphicon-star {
-            color: #FFDF00;
-        }
-
+    .glyphicon-star {
+        color: #FFDF00;
+    }
     </style>
 
 
@@ -43,8 +43,9 @@ if ($_SESSION['email']) { //checks if name is logged in
 }
 $email = $_SESSION['email']; //assigns name value
 ?>
+
 <body>
-<?php
+    <?php
 require 'dbconn.php';
 require 'navbar.php';
 
@@ -60,24 +61,24 @@ $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
 ?>
-<div class='container'>
-    <div class='row'>
-        <div class='col-sm-20 col-md-16 user-details'>
-            <table>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-20 col-md-16 user-details'>
+                <table>
                     <tr>
                         <td style="padding:0 30px 0 0px;">
                             <?php
                             if (is_null($row['PHOTO'])) {
 
                                 ?>
-                                <img src='img/blank.png' alt='Project Pic' title='Project Pic'
-                                     style="width:128px;height:128px">
-                                <?php
+                            <img src='img/blank.png' alt='Project Pic' title='Project Pic'
+                                style="width:128px;height:128px">
+                            <?php
                             } else {
                                 ?>
-                                <img src='data:image;base64,<?php echo $row['PHOTO']; ?>' alt='Project Pic' title='Project Pic'
-                                     style="width:128px;height:128px">
-                                <?php
+                            <img src='data:image;base64,<?php echo $row['PHOTO']; ?>' alt='Project Pic'
+                                title='Project Pic' style="width:128px;height:128px">
+                            <?php
                             } ?>
                         </td>
 
@@ -134,10 +135,10 @@ $row = $result->fetch_assoc();
                         echo "Image uploaded";
 
                         ?>
-                        <script>
-                            window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                        </script>
-                        <?php
+                <script>
+                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                </script>
+                <?php
 
                     } else {
                         echo "Image not uploaded";
@@ -164,10 +165,10 @@ $row = $result->fetch_assoc();
                     $sql_like = "Insert into project_likes (project_id,email_id,date_time_liked) values ($project_id, '" . $_SESSION['email'] . "',NOW())";
                     if ($conn->query($sql_like)) {
                         ?>
-                        <script>
-                            window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                        </script>
-                        <?php
+                <script>
+                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                </script>
+                <?php
 
                     }
                 }
@@ -177,10 +178,10 @@ $row = $result->fetch_assoc();
                     $sql_like = "delete from project_likes where email_id = '" . $_SESSION['email'] . "' and project_id = $project_id";
                     if ($conn->query($sql_like)) {
                         ?>
-                        <script>
-                            window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                        </script>
-                        <?php
+                <script>
+                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                </script>
+                <?php
 
                     }
                 }
@@ -214,15 +215,15 @@ $row = $result->fetch_assoc();
 
 
 
-                    if ($get_project_campaign_status_for_pledge_result['status'] === 'IN_PROGRESS' and $result_geteditrec->num_rows === 0) {
+                    // if ($get_project_campaign_status_for_pledge_result['status'] === 'IN_PROGRESS' and $result_geteditrec->num_rows === 0) {
                         ?>
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                data-target="#myModal5">Pledge!
-                        </button>
-                        <?php
-                    }
-                    ?>
 
+                    <?php
+                    // }
+                    ?>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                        data-target="#myModal5">Pledge!
+                    </button>
                 </div>
 
 
@@ -247,16 +248,16 @@ $row = $result->fetch_assoc();
                     <table class='table table-user-information'>
 
                         <tbody>
-                        <tr>
-                            <td>Project Title:</td>
-                            <td><?php echo $row['PROJECT_TITLE']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Description:</td>
-                            <td><?php echo $row['DESCRIPTION']; ?></td>
-                        </tr>
-                        <tr>
-                            <?php $sql_owner =
+                            <tr>
+                                <td>Project Title:</td>
+                                <td><?php echo $row['PROJECT_TITLE']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Description:</td>
+                                <td><?php echo $row['DESCRIPTION']; ?></td>
+                            </tr>
+                            <tr>
+                                <?php $sql_owner =
                                 "   SELECT PROJECT_OWNERSHIP.EMAIL_ID, FIRST_NAME, LAST_NAME, DATE_FORMAT(START_DATE, '%M %d %Y') AS START_DATE, 
                                     DATE_FORMAT(COMPLETION_DATE, '%M %d %Y') AS COMPLETION_DATE, 
                                     DATE_FORMAT(PLANNED_COMPLETION_DATE,'%M %d %Y') AS PLANNED_COMPLETION_DATE, STATUS
@@ -268,20 +269,21 @@ $row = $result->fetch_assoc();
                             $result_owner = $result->fetch_assoc();
 
                             ?>
-                            <td>Owner:</td>
-                            <td>
-                                <?php
+                                <td>Owner:</td>
+                                <td>
+                                    <?php
                                 echo $result_owner['FIRST_NAME'] . " " . $result_owner['LAST_NAME'] . " (" ?>
-                                <a href="viewOtherUserProfile.php?email=<?php echo $result_owner['EMAIL_ID']; ?>"> <?php echo $result_owner['EMAIL_ID']; ?> </a> <?php echo ")"; ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Start Date:</td>
-                            <td><?php echo $result_owner['START_DATE']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>End Date:</td>
-                            <td><?php
+                                    <a href="viewOtherUserProfile.php?email=<?php echo $result_owner['EMAIL_ID']; ?>">
+                                        <?php echo $result_owner['EMAIL_ID']; ?> </a> <?php echo ")"; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Start Date:</td>
+                                <td><?php echo $result_owner['START_DATE']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>End Date:</td>
+                                <td><?php
                                 if (is_null($result_owner['COMPLETION_DATE']) && $result_owner['STATUS'] === "CAMPAIGNING") {
                                     echo "The Project is still campaigning.";
                                 } else if (is_null($result_owner['COMPLETION_DATE']) && $result_owner['STATUS'] === "FAILED") {
@@ -292,15 +294,15 @@ $row = $result->fetch_assoc();
                                     echo $result_owner['COMPLETION_DATE'];
                                 }
                                 ?></td>
-                        </tr>
-                        <tr>
-                            <td>Planned End Date:</td>
-                            <td><?php echo $result_owner['PLANNED_COMPLETION_DATE']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Project Status:</td>
-                            <td><?php echo $result_owner['STATUS']; ?></td>
-                        </tr>
+                            </tr>
+                            <tr>
+                                <td>Planned End Date:</td>
+                                <td><?php echo $result_owner['PLANNED_COMPLETION_DATE']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Project Status:</td>
+                                <td><?php echo $result_owner['STATUS']; ?></td>
+                            </tr>
 
                         </tbody>
                     </table>
@@ -320,7 +322,7 @@ $row = $result->fetch_assoc();
 
                     $row_get_end_Date_result['completion_date'];
                     ?>
-                    
+
 
 
                 </div>
@@ -346,36 +348,36 @@ $row = $result->fetch_assoc();
                     <table class='table table-user-information'>
 
                         <tbody>
-                        <tr>
-                            <td>Campaign Start Date:</td>
-                            <td><?php echo $funding_result['FUND_START_DATE']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Campaign End Date:</td>
-                            <td><?php echo $funding_result['FUND_END_DATE']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Minimum Funds Required:</td>
-                            <td><?php echo "$" . $funding_result['MIN_FUND_GOAL']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Maximum Funds Required:</td>
-                            <td><?php echo "$" . $funding_result['MAX_FUND_GOAL']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Total Funds Acquired Till Now:</td>
-                            <td><?php
+                            <tr>
+                                <td>Campaign Start Date:</td>
+                                <td><?php echo $funding_result['FUND_START_DATE']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Campaign End Date:</td>
+                                <td><?php echo $funding_result['FUND_END_DATE']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Minimum Funds Required:</td>
+                                <td><?php echo "$" . $funding_result['MIN_FUND_GOAL']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Maximum Funds Required:</td>
+                                <td><?php echo "$" . $funding_result['MAX_FUND_GOAL']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Total Funds Acquired Till Now:</td>
+                                <td><?php
                                 if(trim($total_funds_result['TOTAL_MONEY_PLEDGED'])!='')
                                     echo "$" . $total_funds_result['TOTAL_MONEY_PLEDGED'];
                                 else
                                     echo "$0.00";
                                 ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Campaign Status:</td>
-                            <td><?php echo $funding_result['STATUS']; ?></td>
-                        </tr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Status:</td>
+                                <td><?php echo $funding_result['STATUS']; ?></td>
+                            </tr>
                         </tbody>
                     </table>
 
@@ -418,12 +420,13 @@ $row = $result->fetch_assoc();
 
                         while ($category_result = $result->fetch_assoc()) { ?>
 
-                            <tr>
-                                <td>
-                                    <a href="viewCategoryProjects.php?category_name=<?php echo $category_result['NAME']; ?>"> <?php echo $category_result['NAME']; ?> </a>
-                                </td>
-                            </tr>
-                            <?php
+                    <tr>
+                        <td>
+                            <a href="viewCategoryProjects.php?category_name=<?php echo $category_result['NAME']; ?>">
+                                <?php echo $category_result['NAME']; ?> </a>
+                        </td>
+                    </tr>
+                    <?php
                         }
                         echo "</tbody></table> ";
                     }
@@ -439,7 +442,7 @@ $row = $result->fetch_assoc();
                     }
                     ?>
 
-                    
+
                 </div>
 
                 <div class='tab-pane fade' id='ratings'>
@@ -475,12 +478,13 @@ $row = $result->fetch_assoc();
                         while ($ratings_result = $result->fetch_assoc()) {
 
                             echo "<tr>"; ?>
-                            <td>
-                                <strong> <?php echo $ratings_result['FIRST_NAME'] . " " . $ratings_result['LAST_NAME'] . " (" ?>
-                                    <a href="viewOtherUserProfile.php?email=<?php echo $ratings_result['EMAIL_ID']; ?>"
-                                       style="color: #FFFFFF;"><?php echo $ratings_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
-                                </strong></td>
-                            <?php echo "<td>" . $ratings_result['NUMBER_OF_STARS'] . "</td>
+                    <td>
+                        <strong> <?php echo $ratings_result['FIRST_NAME'] . " " . $ratings_result['LAST_NAME'] . " (" ?>
+                            <a href="viewOtherUserProfile.php?email=<?php echo $ratings_result['EMAIL_ID']; ?>"
+                                style="color: #FFFFFF;"><?php echo $ratings_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
+                        </strong>
+                    </td>
+                    <?php echo "<td>" . $ratings_result['NUMBER_OF_STARS'] . "</td>
                                             <td>" . $ratings_result['DATETIME_POSTED'] . "</td>
                                         </tr>";
 
@@ -497,23 +501,22 @@ $row = $result->fetch_assoc();
                             $check_user_has_rated = $conn->query($check_user_has_rated);
                             if ($check_user_has_rated->num_rows == 0) {
                                 ?>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <form enctype="multipart/form-data" method="post">
-                                        <table class="table table-striped table-hover">
-                                            <tbody>
-                                            <tr>
-                                                <td>Stars:</td>
-                                                <td><input class="form-control" type="number" name="stars" id="stars"
-                                                           min="0"
-                                                           max="5" step="0.1" required></td>
-                                                <td><input type="submit" value="Submit" name="rate" id="rate"
-                                                           class="btn btn-primary btn-sm"/></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </form>
-                                </div>
-                                <?php
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <form enctype="multipart/form-data" method="post">
+                            <table class="table table-striped table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>Stars:</td>
+                                        <td><input class="form-control" type="number" name="stars" id="stars" min="0"
+                                                max="5" step="0.1" required></td>
+                                        <td><input type="submit" value="Submit" name="rate" id="rate"
+                                                class="btn btn-primary btn-sm" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <?php
                             }
                         }
                     }
@@ -523,10 +526,10 @@ $row = $result->fetch_assoc();
                         if ($conn->query($add_rating_query) === TRUE) {
                             unset($_POST['stars']);
                             unset($_POST['rate']); ?>
-                            <script>
-                                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                            </script>
-                            <?php
+                    <script>
+                    window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                    </script>
+                    <?php
                         }
                     }
 
@@ -553,14 +556,15 @@ $row = $result->fetch_assoc();
 
                         while ($like_result = $like_query->fetch_assoc()) { ?>
 
-                            <tr>
-                                <td> <?php echo $like_result['FIRST_NAME'] . " " . $like_result['LAST_NAME'] ?> </td>
-                                <td>
-                                    <a href="viewOtherUserProfile.php?email=<?php echo $like_result['EMAIL_ID']; ?>"><?php echo $like_result['EMAIL_ID']; ?></a>
-                                </td>
-                                <td><?php echo $like_result['DATE_TIME_LIKED'] ?></td>
-                            </tr>
-                            <?php
+                    <tr>
+                        <td> <?php echo $like_result['FIRST_NAME'] . " " . $like_result['LAST_NAME'] ?> </td>
+                        <td>
+                            <a
+                                href="viewOtherUserProfile.php?email=<?php echo $like_result['EMAIL_ID']; ?>"><?php echo $like_result['EMAIL_ID']; ?></a>
+                        </td>
+                        <td><?php echo $like_result['DATE_TIME_LIKED'] ?></td>
+                    </tr>
+                    <?php
                         }
                         echo "</tbody></table> ";
                     }
@@ -586,12 +590,13 @@ $row = $result->fetch_assoc();
                         <form enctype="multipart/form-data" method="post">
                             <table class="table table-striped table-hover">
                                 <tbody>
-                                <tr>
-                                    <td><input type="text" class="form-control" placeholder="Type your comment here..."
-                                               name="comment" id="comment"></td>
-                                    <td><input type="submit" value="Submit" name="comment_button" id="comment_button"
-                                               class="btn btn-primary btn-sm"/></td>
-                                </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control"
+                                                placeholder="Type your comment here..." name="comment" id="comment">
+                                        </td>
+                                        <td><input type="submit" value="Submit" name="comment_button"
+                                                id="comment_button" class="btn btn-primary btn-sm" /></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -606,24 +611,25 @@ $row = $result->fetch_assoc();
                         while ($comment_result = $result->fetch_assoc()) { ?>
 
 
-                            <div class="container">
-                                <div class="col-sm-8">
-                                    <div class="panel panel-primary">
-                                        <div class="panel-heading">
+                    <div class="container">
+                        <div class="col-sm-8">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
 
 
-                                            <strong> <?php echo $comment_result['FIRST_NAME'] . " " . $comment_result['LAST_NAME'] . " (" ?>
-                                                <a href="viewOtherUserProfile.php?email=<?php echo $comment_result['EMAIL_ID']; ?>"
-                                                   style="color: #FFFFFF;"><?php echo $comment_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
-                                            </strong>
-                                            <span> posted on </span>
-                                            <span><?php echo $comment_result['DATE_TIME_POSTED']; ?> </span>
-                                        </div>
-                                        <div class="panel-body"><?php echo $comment_result['DESCRIPTION']; ?> </div>
-                                    </div>
+                                    <strong>
+                                        <?php echo $comment_result['FIRST_NAME'] . " " . $comment_result['LAST_NAME'] . " (" ?>
+                                        <a href="viewOtherUserProfile.php?email=<?php echo $comment_result['EMAIL_ID']; ?>"
+                                            style="color: #FFFFFF;"><?php echo $comment_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
+                                    </strong>
+                                    <span> posted on </span>
+                                    <span><?php echo $comment_result['DATE_TIME_POSTED']; ?> </span>
                                 </div>
+                                <div class="panel-body"><?php echo $comment_result['DESCRIPTION']; ?> </div>
                             </div>
-                            <?php
+                        </div>
+                    </div>
+                    <?php
                         }
                     }
 
@@ -631,10 +637,10 @@ $row = $result->fetch_assoc();
                         $add_project_comment = "INSERT into project_comments values(" . $project_id . ",'" . $email . "','" . $_POST['comment'] . "', NOW());";
                         if ($conn->query($add_project_comment) === TRUE) {
                             ?>
-                            <script>
-                                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                            </script>
-                            <?php
+                    <script>
+                    window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                    </script>
+                    <?php
                         }
                     } else {
 
@@ -662,27 +668,28 @@ $row = $result->fetch_assoc();
                     $row_geteditrec = "select * from project_ownership where project_id=$project_id and email_id='" . $_SESSION['email'] . "'";
                     $result_geteditrec = $conn->query($row_geteditrec);
                     if ($result_geteditrec->num_rows > 0) {?>
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <form enctype="multipart/form-data" method="post">
-                                <table class="table table-striped table-hover">
-                                    <tbody>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <form enctype="multipart/form-data" method="post">
+                            <table class="table table-striped table-hover">
+                                <tbody>
                                     <tr>
                                         <br>
                                         <label for="inputName" class="control-label">Post</label>
-                                        <textarea class="form-control" rows="3" id="post" name="post" required></textarea>
+                                        <textarea class="form-control" rows="3" id="post" name="post"
+                                            required></textarea>
                                         <div style="margin-top:1%">
-                        <span class="btn btn-primary btn-sm">
-                                       <input type="file" color="#FFFFFF" id="photo" name="photo"/>
-                                    </span>
+                                            <span class="btn btn-primary btn-sm">
+                                                <input type="file" color="#FFFFFF" id="photo" name="photo" />
+                                            </span>
                                             <input type="submit" value="Post" name="post_button" id="post_button"
-                                                   style="margin-left: 1%;" class="btn btn-primary btn-sm"/>
+                                                style="margin-left: 1%;" class="btn btn-primary btn-sm" />
                                         </div>
 
                                     </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                     <?php
                     }
                     ?>
@@ -697,21 +704,22 @@ $row = $result->fetch_assoc();
                     while ($post_result = $post_query->fetch_assoc()) { ?>
 
 
-                        <div class="container">
-                            <div class="col-sm-8">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <strong> <?php echo $post_result['FIRST_NAME'] . " " . $post_result['LAST_NAME'] . " (" ?>
-                                            <a href="viewOtherUserProfile.php?email=<?php echo $post_result['EMAIL_ID']; ?>"
-                                               style="color: #FFFFFF;"><?php echo $post_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
-                                        </strong>
-                                        <span> posted on </span>
-                                        <span><?php echo $post_result['DATE_TIME_POSTED']; ?> </span>
-                                    </div>
+                    <div class="container">
+                        <div class="col-sm-8">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <strong>
+                                        <?php echo $post_result['FIRST_NAME'] . " " . $post_result['LAST_NAME'] . " (" ?>
+                                        <a href="viewOtherUserProfile.php?email=<?php echo $post_result['EMAIL_ID']; ?>"
+                                            style="color: #FFFFFF;"><?php echo $post_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
+                                    </strong>
+                                    <span> posted on </span>
+                                    <span><?php echo $post_result['DATE_TIME_POSTED']; ?> </span>
+                                </div>
 
-                                    <div class="panel-body">
+                                <div class="panel-body">
                                     <div style="color:#FFFFFF">
-                                       <?php
+                                        <?php
                                         echo $post_result['DESCRIPTION']; ?>
 
 
@@ -722,19 +730,13 @@ $row = $result->fetch_assoc();
                                     <?php
                                     if (!is_null($post_result['MULTIMEDIA'])) {
                                         ?>
-                                        <div>
-                
-                                      <img src='data:image;base64,<?php echo $post_result['MULTIMEDIA']; ?>' alt='Project Pic' title='Post_pic'">
-                                      </div>"
-                                                           
-                                            <?php }?>
+                                    <div>
 
+                                        <img src='data:image;base64,<?php echo $post_result['MULTIMEDIA']; ?>'
+                                            alt='Project Pic' title='Post_pic'">
+                                      </div>" <?php }?> </div>
 
-                                            
-                                
-                                    </div>
-
-                                    <div class="container">
+                                        <div class="container">
                                             <?php
 
                                             $post_id = $post_result['POST_ID'];
@@ -759,11 +761,11 @@ $row = $result->fetch_assoc();
                                             }
 
                                             ?>
-                                        
-                                    </div>
+
+                                        </div>
 
 
-                                  <?php  
+                                        <?php  
                                 $post_id= $post_result['POST_ID'];
                                   $post_comment_query =
                                  
@@ -777,68 +779,74 @@ $row = $result->fetch_assoc();
                         $result = $conn->query($post_comment_query);
                         if ($result->num_rows === 0) {
                             ?>
-                            <div class="panel-body">
-                            <?php
+                                        <div class="panel-body">
+                                            <?php
                             echo "No comments yet. Be the first one to comment!";
                             ?>
-                            </div>
-                            <?php
+                                        </div>
+                                        <?php
                         } else {
 
                         while ($post_comment_result = $result->fetch_assoc()) { ?>
 
 
-                            <div class="container">
-                                <div class="col-sm-8">
-                                        
+                                        <div class="container">
+                                            <div class="col-sm-8">
 
-                                            <strong> <?php echo $post_comment_result['FIRST_NAME'] . " " . $post_comment_result['LAST_NAME'] . " (" ?>
-                                                <a href="viewOtherUserProfile.php?email=<?php echo $post_comment_result['EMAIL_ID']; ?>"
-                                                   style="color: #FFFFFF;"><?php echo $post_comment_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
-                                            </strong>
-                                            <span> commented on </span>
-                                            <span><?php echo $post_comment_result['DATE_TIME_POSTED']; ?> </span>
-                                        
-                                        <div class="panel-body" style="color: #FFFFFF;"><?php echo $post_comment_result['DESCRIPTION']; ?> </div>
-                                   
-                                </div>
-                            </div>
-                            <?php
+
+                                                <strong>
+                                                    <?php echo $post_comment_result['FIRST_NAME'] . " " . $post_comment_result['LAST_NAME'] . " (" ?>
+                                                    <a href="viewOtherUserProfile.php?email=<?php echo $post_comment_result['EMAIL_ID']; ?>"
+                                                        style="color: #FFFFFF;"><?php echo $post_comment_result['EMAIL_ID']; ?></a><?php echo ")"; ?>
+                                                </strong>
+                                                <span> commented on </span>
+                                                <span><?php echo $post_comment_result['DATE_TIME_POSTED']; ?> </span>
+
+                                                <div class="panel-body" style="color: #FFFFFF;">
+                                                    <?php echo $post_comment_result['DESCRIPTION']; ?> </div>
+
+                                            </div>
+                                        </div>
+                                        <?php
                         }
                     }
 
 
                     ?>
-                    
-
-                                    <div class="container">
-                                        <div class="col-sm-7">
-                                           <form enctype="multipart/form-data" method="post">
-                            <table class="table table-striped table-hover">
-                                <tbody>
-                                <tr>
-                                <input type="hidden" name="post_id" value="<?php echo $post_id;?>" />
-
-                                    <td><input type="text" class="form-control" placeholder="Type your comment here..."
-                                               name="post_comment" id="post_comment"></td>
-                                    <td><input type="submit" value="Comment" name="post_comment_button" id="post_comment_button"
-                                               class="btn btn-primary btn-sm"/></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
 
 
+                                        <div class="container">
+                                            <div class="col-sm-7">
+                                                <form enctype="multipart/form-data" method="post">
+                                                    <table class="table table-striped table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <input type="hidden" name="post_id"
+                                                                    value="<?php echo $post_id;?>" />
+
+                                                                <td><input type="text" class="form-control"
+                                                                        placeholder="Type your comment here..."
+                                                                        name="post_comment" id="post_comment"></td>
+                                                                <td><input type="submit" value="Comment"
+                                                                        name="post_comment_button"
+                                                                        id="post_comment_button"
+                                                                        class="btn btn-primary btn-sm" /></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+
+
+                                            </div>
                                         </div>
+
                                     </div>
 
+
                                 </div>
-
-
                             </div>
-                        </div>
 
-                    <?php
+                            <?php
                     }
 
                     if (isset($_POST['post_comment_button'])) {
@@ -847,7 +855,7 @@ $row = $result->fetch_assoc();
                         if ($conn->query($add_post_comment) === TRUE) {
                             ?>
                             <script>
-                                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                            window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
                             </script>
                             <?php
                         }
@@ -861,10 +869,10 @@ $row = $result->fetch_assoc();
                     $sql_like_post = "Insert into post_likes (post_id,email_id,date_time_liked) values ('".$_POST['post_id']."','$email',NOW());";
                     if ($conn->query($sql_like_post)) {
                     ?>
-                        <script>
+                            <script>
                             window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                        </script>
-                    <?php
+                            </script>
+                            <?php
 
                     }
                     }
@@ -874,10 +882,10 @@ $row = $result->fetch_assoc();
                     $sql_like = "delete from post_likes where email_id = '$email' and post_id = '".$_POST['post_id']."'";
                     if ($conn->query($sql_like)) {
                     ?>
-                        <script>
+                            <script>
                             window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
-                        </script>
-                        <?php
+                            </script>
+                            <?php
 
                     }
                     }
@@ -905,7 +913,7 @@ $row = $result->fetch_assoc();
                         if ($conn->query($add_post) === TRUE) {
                             ?>
                             <script>
-                                window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
+                            window.location.href = 'viewProject.php?project_id=<?php echo $project_id;?>';
                             </script>
                             <?php
                         }
@@ -915,71 +923,72 @@ $row = $result->fetch_assoc();
 
                     ?>
 
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
         </div>
 
-    </div>
-</div>
+        <!--By Drumil Modal Code-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <h3 class="text-center login-title">Edit Project Information</h3>
+                            <div class="account-wall">
+                                <form class="form-signin" method="POST" action="updateProject.php">
 
-<!--By Drumil Modal Code-->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <h3 class="text-center login-title">Edit Project Information</h3>
-                    <div class="account-wall">
-                        <form class="form-signin" method="POST" action="updateProject.php">
+                                    <table class='table table-user-information'>
 
-                            <table class='table table-user-information'>
+                                        <tbody>
 
-                                <tbody>
-
-                                <tr>
-                                    <td>End Date:</td>
-                                    <td><input type="date" class="form-control"
-                                               placeholder="example: March 12 2017" name="completion_date"
-                                               autofocus value="<?php echo $result_owner['COMPLETION_DATE']; ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Status:</td>
-                                    <td><input list="statuses" class="form-control" placeholder="Status" name="status"
-                                               required
-                                               autofocus value="<?php echo $result_owner['STATUS']; ?>" required>
-                                        <datalist id="statuses">
-                                            <option value="COMPLETED">
-                                            <option value="STARTED">
-                                            <option value="CAMPAIGNING">
-                                            <option value="FAILED">
-                                        </datalist>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            <tr>
+                                                <td>End Date:</td>
+                                                <td><input type="date" class="form-control"
+                                                        placeholder="example: March 12 2017" name="completion_date"
+                                                        autofocus
+                                                        value="<?php echo $result_owner['COMPLETION_DATE']; ?>">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status:</td>
+                                                <td><input list="statuses" class="form-control" placeholder="Status"
+                                                        name="status" required autofocus
+                                                        value="<?php echo $result_owner['STATUS']; ?>" required>
+                                                    <datalist id="statuses">
+                                                        <option value="COMPLETED">
+                                                        <option value="STARTED">
+                                                        <option value="CAMPAIGNING">
+                                                        <option value="FAILED">
+                                                    </datalist>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div id="myModal2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <h1 class="text-center login-title">Edit Fund Details</h1>
-                    <div class="account-wall">
-                        <form class="form-signin" method="POST" action="updateFundingDetails.php">
+        <div id="myModal2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <h1 class="text-center login-title">Edit Fund Details</h1>
+                            <div class="account-wall">
+                                <form class="form-signin" method="POST" action="updateFundingDetails.php">
 
-                            <?php
+                                    <?php
 
                             $fund_edit_query =
                                 "select MIN_FUND_GOAL, MAX_FUND_GOAL from PROJECT_CAMPAIGN where PROJECT_ID = $project_id";
@@ -991,58 +1000,58 @@ $row = $result->fetch_assoc();
 
                             ?>
 
-                            <table class='table table-user-information'>
+                                    <table class='table table-user-information'>
 
-                                <tbody>
-                                <tr>
-                                    <td>Minimum Funds($):</td>
-                                    <td><input type="number" step="0.1" class="form-control" placeholder="MIN_FUND_GOAL"
-                                               name="min_fund_goal"
-                                               required autofocus
-                                               value="<?php echo $fund_edit_result['MIN_FUND_GOAL']; ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Maximum Funds($):</td>
-                                    <td><input type="number" step="0.1" class="form-control" placeholder="Description"
-                                               name="max_fund_goal"
-                                               required autofocus
-                                               value="<?php echo $fund_edit_result['MAX_FUND_GOAL']; ?>">
-                                    </td>
-                                </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>Minimum Funds($):</td>
+                                                <td><input type="number" step="0.1" class="form-control"
+                                                        placeholder="MIN_FUND_GOAL" name="min_fund_goal" required
+                                                        autofocus
+                                                        value="<?php echo $fund_edit_result['MIN_FUND_GOAL']; ?>">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maximum Funds($):</td>
+                                                <td><input type="number" step="0.1" class="form-control"
+                                                        placeholder="Description" name="max_fund_goal" required
+                                                        autofocus
+                                                        value="<?php echo $fund_edit_result['MAX_FUND_GOAL']; ?>">
+                                                </td>
+                                            </tr>
 
-                                </tbody>
-                            </table>
+                                        </tbody>
+                                    </table>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+
+                                </form>
                             </div>
 
-                        </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div id="myModal3" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <h1 class="text-center login-title">Edit Categories</h1>
-                    <div class="account-wall">
+        <div id="myModal3" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <h1 class="text-center login-title">Edit Categories</h1>
+                            <div class="account-wall">
 
-                        <!--<form class="form-signin" method="POST" action="updateFundingDetails.php">
+                                <!--<form class="form-signin" method="POST" action="updateFundingDetails.php">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Add new Category</button>
                             </div>
                         </form>-->
 
-                        <form class="form-signin" method="POST" action="updateCategory.php">
-                            <?php
+                                <form class="form-signin" method="POST" action="updateCategory.php">
+                                    <?php
 
                             $category_update_query =
                                 "select NAME from CATEGORY";
@@ -1066,8 +1075,8 @@ $row = $result->fetch_assoc();
                                 echo "No categories to choose from";
                             } else { ?>
 
-                                <table class='table table-user-information'>
-                                    <?php
+                                    <table class='table table-user-information'>
+                                        <?php
                                     while ($category_update_result = $category_update_query->fetch_assoc()) {
                                         $flag = 0;
                                         for ($x = 0; $x < count($current_category_array); $x++) {
@@ -1087,95 +1096,94 @@ $row = $result->fetch_assoc();
                                         <?php
                                     }
                                     ?>
-                                </table>
-                                <?php
+                                    </table>
+                                    <?php
                             }
                             ?>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+
+                                </form>
                             </div>
 
-                        </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div id="myModal5" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <h4 class="text-center login-title">Pledge Funds</h4>
-                    <h6 class="text-center login-title">Help create the world a better place.</h6>
-                    <div class="account-wall">
-                        <form class="form-signin" method="POST" action="insertFunds.php">
+        <div id="myModal5" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <h4 class="text-center login-title">Pledge Funds</h4>
+                            <h6 class="text-center login-title">Help create the world a better place.</h6>
+                            <div class="account-wall">
+                                <form class="form-signin" method="POST" action="insertFunds.php">
 
-                            <table class='table table-user-information'>
+                                    <table class='table table-user-information'>
 
-                                <tbody>
-                                <tr>
-                                    <td>Enter Amount:</td>
-                                    <td><input type="number" step="0.1" class="form-control" placeholder="Pledged Money"
-                                               name="pledged_money"
-                                               required autofocus>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Enter Amount:</td>
+                                                <td><input type="number" step="0.1" class="form-control"
+                                                        placeholder="Pledged Money" name="pledged_money" required
+                                                        autofocus>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+
+                                </form>
                             </div>
 
-                        </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
-<script>
-
-    $('#myTab a').click(function(e) {
-        e.preventDefault();
-        $(this).tab('show');
-    });
-
-    // store the currently selected tab in the hash value
-    $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
-        var id = $(e.target).attr("href").substr(1);
-        <?php $_SESSION['hash']?> = id;
-        window.location.hash = id;
-    });
-
-    // on load of the page: switch to the currently selected tab
-    var hash = window.location.hash;
-    hash = <?php echo $_SESSION['hash'];?>
-    $('#myTab a[href="' + hash + '"]').tab('show');
-
-
-    var val = '<?php echo $_GET['tab'] ?>';
-    if(val != ''){
-        //alert(val);
-        jQuery(function () {
-            jQuery('a[href="#stock"]').tab('show');
+        <script>
+        $('#myTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
         });
-    }
 
-</script>
+        // store the currently selected tab in the hash value
+        $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+            var id = $(e.target).attr("href").substr(1);
+            <?php $_SESSION['hash']?> = id;
+            window.location.hash = id;
+        });
+
+        // on load of the page: switch to the currently selected tab
+        var hash = window.location.hash;
+        hash = <?php echo $_SESSION['hash'];?>
+        $('#myTab a[href="' + hash + '"]').tab('show');
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        var val = '<?php echo $_GET['tab'] ?>';
+        if (val != '') {
+            //alert(val);
+            jQuery(function() {
+                jQuery('a[href="#stock"]').tab('show');
+            });
+        }
+        </script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<!--<script src="js/bootstrap.min.js"></script>-->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!--<script src="js/bootstrap.min.js"></script>-->
 </body>
+
 </html>
