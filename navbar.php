@@ -1,7 +1,28 @@
 <?php
 require 'dbconn.php';
 ?>
-<nav class="navbar navbar-default">
+
+<head>
+    <style>
+    nav {
+        background-color: #0582ca !important;
+        border: none !important;
+        margin-top: -20px !important;
+
+    }
+
+
+
+    nav a {
+        color: black !important;
+    }
+
+    .dropdown-menu a {
+        color: white !Important;
+    }
+    </style>
+</head>
+<nav class="navbar navbar-default navbar-light bg-light">
     <div class=" container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"

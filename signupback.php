@@ -14,17 +14,17 @@
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $address_line_1 = $_POST['address_line_1'];
-        $address_line_2 = $_POST['address_line_2'];
+        $address_line_2 = "deafult";
         $city = $_POST['city'];
         $state = $_POST['state'];
         $country = $_POST['country'];
-        $zip = $_POST['zip'];
+        $zip = "01234";
         $phone = $_POST['phone'];
 
-        $credit_card_number = $_POST['credit_card_number'];
-        $cvv = $_POST['cvv'];
-        $month = $_POST['month'];
-        $year = $_POST['year'];
+        $credit_card_number = "1234567890";
+        $cvv = "deafult";
+        $month = "02";
+        $year = "2024";
 
 
 
@@ -50,28 +50,27 @@
                 }
             }else{
                 ?>
-                <script>
-                    alert("Registration not successful.");
-                    window.location.href = 'index.php';
-                </script>
-                <?php
+<script>
+alert("Registration not successful.");
+window.location.href = 'index.php';
+</script>
+<?php
             }
         }else {
             ?>
-            <script>
-                alert("The passwords do not match!")
-                window.location.href = 'index.php';
-            </script>
-            <?php
+<script>
+alert("The passwords do not match!")
+window.location.href = 'index.php';
+</script>
+<?php
         }
         # code...
     } else {
         ?>
-        <script>
-            alert("The required fields are not valid")
-            window.location.href = 'index.php';
-        </script>
-        <?php
+<script>
+alert("The required fields are not valid")
+window.location.href = 'index.php';
+</script>
+<?php
     }
 ?>
-

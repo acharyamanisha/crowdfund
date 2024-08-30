@@ -358,19 +358,19 @@ $row = $result->fetch_assoc();
                             </tr>
                             <tr>
                                 <td>Minimum Funds Required:</td>
-                                <td><?php echo "$" . $funding_result['MIN_FUND_GOAL']; ?></td>
+                                <td><?php echo "Rs" . $funding_result['MIN_FUND_GOAL']; ?></td>
                             </tr>
                             <tr>
                                 <td>Maximum Funds Required:</td>
-                                <td><?php echo "$" . $funding_result['MAX_FUND_GOAL']; ?></td>
+                                <td><?php echo "Rs" . $funding_result['MAX_FUND_GOAL']; ?></td>
                             </tr>
                             <tr>
                                 <td>Total Funds Acquired Till Now:</td>
                                 <td><?php
                                 if(trim($total_funds_result['TOTAL_MONEY_PLEDGED'])!='')
-                                    echo "$" . $total_funds_result['TOTAL_MONEY_PLEDGED'];
+                                    echo "Rs" . $total_funds_result['TOTAL_MONEY_PLEDGED'];
                                 else
-                                    echo "$0.00";
+                                    echo "Rs 0.00";
                                 ?>
                                 </td>
                             </tr>
@@ -1004,7 +1004,7 @@ $row = $result->fetch_assoc();
 
                                         <tbody>
                                             <tr>
-                                                <td>Minimum Funds($):</td>
+                                                <td>Minimum Funds():</td>
                                                 <td><input type="number" step="0.1" class="form-control"
                                                         placeholder="MIN_FUND_GOAL" name="min_fund_goal" required
                                                         autofocus
@@ -1012,7 +1012,7 @@ $row = $result->fetch_assoc();
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Maximum Funds($):</td>
+                                                <td>Maximum Funds():</td>
                                                 <td><input type="number" step="0.1" class="form-control"
                                                         placeholder="Description" name="max_fund_goal" required
                                                         autofocus

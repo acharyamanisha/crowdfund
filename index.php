@@ -160,16 +160,16 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputName" class="control-label">Address Line 1</label>
+                                    <label for="inputName" class="control-label">Address</label>
                                     <input type="text" class="form-control" id="address_line_1" name="address_line_1"
-                                        placeholder="Address Line 1">
+                                        placeholder="Address">
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">Address Line 2</label>
                                     <input type="text" class="form-control" id="address_line_2" name="address_line_2"
                                         placeholder="Address Line 2">
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                     <label for="inputName" class="control-label">City</label>
@@ -183,11 +183,11 @@
                                         placeholder="Enter State">
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">zip</label>
                                     <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter Zip"
                                         required>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                     <label for="inputName" class="control-label">Country</label>
@@ -202,19 +202,19 @@
                                         required pattern="[0-9]{10}">
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">Esewa Number</label>
                                     <input type="text" class="form-control" id="credit_card_number"
                                         name="credit_card_number" placeholder="Enter Credit Card Number"
                                         onkeup="creditcard()" minlength="10" maxlength="10" required
                                         pattern="[0-9]{10}">
-                                </div>
+                                </div> -->
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">CVV</label>
                                     <input type="text" class="form-control" id="cvv" name="cvv" pattern="[0-9]{3}"
                                         placeholder="Enter CVV" onkeup="cvv()" required minlength="3" maxlength="3">
-                                </div>
+                                </div> -->
 
 
                                 <script>
@@ -231,51 +231,51 @@
                                     });
                                 }
 
-                                function creditcard() {
-                                    $('#phone').keypress(function(e) {
-                                        var a = [];
-                                        var k = e.which;
+                                // function creditcard() {
+                                //     $('#phone').keypress(function(e) {
+                                //         var a = [];
+                                //         var k = e.which;
 
-                                        for (i = 48; i < 64; i++)
-                                            a.push(i);
+                                //         for (i = 48; i < 64; i++)
+                                //             a.push(i);
 
-                                        if (!(a.indexOf(k) >= 0))
-                                            e.preventDefault();
-                                    });
-                                }
+                                //         if (!(a.indexOf(k) >= 0))
+                                //             e.preventDefault();
+                                //     });
+                                // }
 
-                                function cvv() {
-                                    $('#phone').keypress(function(e) {
-                                        var a = [];
-                                        var k = e.which;
+                                // function cvv() {
+                                //     $('#phone').keypress(function(e) {
+                                //         var a = [];
+                                //         var k = e.which;
 
-                                        for (i = 48; i < 51; i++)
-                                            a.push(i);
+                                //         for (i = 48; i < 51; i++)
+                                //             a.push(i);
 
-                                        if (!(a.indexOf(k) >= 0))
-                                            e.preventDefault();
-                                    });
-                                }
+                                //         if (!(a.indexOf(k) >= 0))
+                                //             e.preventDefault();
+                                //     });
+                                // }
                                 </script>
 
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">Expiration Month</label>
                                     <select name="month" class="form-control" id="month">
                                         <?php for ($i = 1; $i <= 12; $i++): ?>
                                         <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>"><?= $i ?></option>
                                         <?php endfor ?>
                                     </select>
-                                </div>
+                                </div> -->
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputName" class="control-label">Expiration Year</label>
                                     <select name="year" class="form-control" id="year">
                                         <?php for ($i = 2017; $i <= 2025; $i++): ?>
                                         <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>"><?= $i ?></option>
                                         <?php endfor ?>
                                     </select>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                     <label for="inputPassword" class="control-label">Password</label>
