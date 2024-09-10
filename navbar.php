@@ -5,7 +5,7 @@ require 'dbconn.php';
 <head>
     <style>
     nav {
-        background-color: #0582ca !important;
+        background-color: #669bbc !important;
         border: none !important;
         margin-top: -20px !important;
 
