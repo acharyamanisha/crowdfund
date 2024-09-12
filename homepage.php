@@ -27,7 +27,22 @@
     <![endif]-->
     <style>
     body {
-        background-color: #b3dee2 !Important;
+        background-color: white !Important;
+
+    }
+
+    .card-title,
+    .heading {
+        color: black !important;
+    }
+
+    .table {
+        background-color: teal !important;
+    }
+
+    .table tr td {
+        padding: 10px !important;
+
     }
     </style>
 </head>
@@ -40,6 +55,7 @@ if ($_SESSION['email']) { //checks if name is logged in
 }
 $email = $_SESSION['email']; //assigns name value
 ?>
+
 
 <body>
 
@@ -123,7 +139,7 @@ $email = $_SESSION['email']; //assigns name value
         <div class="row">
             <blockquote>
                 <h5>
-                    <p>Your Recent Pledges</p>
+                    <p class="heading">Your Recent Pledges</p>
             </blockquote>
 
 
@@ -141,7 +157,7 @@ $email = $_SESSION['email']; //assigns name value
                 echo "<br>No Recent Pledges!";
             } else {
                 echo
-                    "<table class=" . "table table-striped table-hover" . ">
+                    "<table class=" . "table table-success homepage-table " . ">
                                 <tbody>";
                 while ($row = $recent_pledges->fetch_assoc()) {
 
@@ -157,13 +173,13 @@ $email = $_SESSION['email']; //assigns name value
         </div>
     </div>
 
-    <div class="container">
+    <div class=" container">
 
         <br>
         <div class="row">
             <blockquote>
                 <h5>
-                    <p>Your Recent Likes</p>
+                    <p class="heading">Your Recent Likes</p>
             </blockquote>
 
 
@@ -209,7 +225,7 @@ $email = $_SESSION['email']; //assigns name value
         <div class="row">
             <blockquote>
                 <h5>
-                    <p>Your Recent Comments</p>
+                    <p class="heading">Your Recent Comments</p>
             </blockquote>
 
 
