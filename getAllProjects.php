@@ -57,11 +57,11 @@ if ($get_all_projects_result->num_rows === 0) {
                 <?php
                 if (is_null($row['PHOTO'])){?>
                     <img src='img/blank.png' alt='Project Pic' title='Project Pic'
-                         style="width:128px;height:128px">
+                         style="width:200px;height:200px">
                     <?php
                 }else{?>
                     <img src='data:image;base64,<?php echo $row['PHOTO']; ?>' alt='Project Pic' title='Project Pic'
-                         style="width:128px;height:128px">
+                         style="width:200px;height:200px">
                     <?php
                 }?>
                 <!--/.Card image-->

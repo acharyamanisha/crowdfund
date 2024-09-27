@@ -1,318 +1,279 @@
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>FundHive</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>FundMe!!</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img1/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <link rel="stylesheet" href="css1/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css1/font-awesome.min.css">
+    <link rel="stylesheet" href="css1/themify-icons.css">
+    <link rel="stylesheet" href="css1/nice-select.css">
+    <link rel="stylesheet" href="css1/flaticon.css">
+    <link rel="stylesheet" href="css1/gijgo.css">
+    <link rel="stylesheet" href="css1/animate.css">
+    <link rel="stylesheet" href="css1/slicknav.css">
+    <link rel="stylesheet" href="css1/style.css">
+    <link rel="stylesheet" href="./css1/custom.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <center>
-                    <img src="img/homepage/5.jpg" alt="Romia" height="500" width="1200">
-
-                    <div class="carousel-caption">
-                        <h3>FundHive</h3>
-                        FundHive!! is perfect website to find projects and fund them
-
-                    </div>
-                </center>
-            </div>
-            <div class="item">
-                <center>
-                    <img src="img/homepage/2.jpg" alt="Alternaing" height="500" width="1200">
-                    <div class="carousel-caption">
-                        <h3>Post your Projects</h3>
-                        <p>FundHive is a perfect website for posting and sharing your Projects</p>
-                    </div>
-                </center>
-            </div>
-
-            <div class="item">
-                <center>
-                    <img src="img/homepage/rating.jpg" alt="Alternaing" height="500" width="1200">
-                    <div class="carousel-caption">
-                        <h3>Rate Projects</h3>
-                        <p>Rate Projects from other users and help them with your suggestion</p>
-                    </div>
-                </center>
-            </div>
-
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <center>
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Sign
-                        In
-                    </button>
-                </center>
-            </div>
-
-
-            <div class="col-sm-6">
-                <center>
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                        data-target="#myModal2">Sign
-                        Up
-                    </button>
-                </center>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-md-offset-4">
-                        <h1 class="text-center login-title">Sign in to continue</h1>
-                        <div class="account-wall">
-                            <form class="form-signin" method="POST" action="signinbackend.php">
-                                <input type="text" class="form-control" placeholder="Email" id="email" name="email"
-                                    required autofocus>
-                                <input type="password" class="form-control" placeholder="Password" id="password"
-                                    name="password" required>
-                                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                    Sign in
-                                </button>
-
-
-                            </form>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img1/logo-no-background.png" alt="" class="logo1">
+                                </a>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="myModal2" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-md-offset-4">
-                        <h1 class="text-center login-title">Start funding or Get Funded</h1>
-                        <div class="account-wall">
-                            <form class="form-signup" data-toggle="validator" role="form" method="POST"
-                                action="signupback.php">
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="About.html">About</a></li>
 
 
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">First Name</label>
-                                    <input type="text" class="form-control" id="fname" name="fname"
-                                        placeholder="Enter First Name" required>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lname" name="lname"
-                                        placeholder="Enter Last Name">
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="inputEmail" class="control-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                        data-error="Wrong Email id or username" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">Address</label>
-                                    <input type="text" class="form-control" id="address_line_1" name="address_line_1"
-                                        placeholder="Address">
-                                </div>
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">Address Line 2</label>
-                                    <input type="text" class="form-control" id="address_line_2" name="address_line_2"
-                                        placeholder="Address Line 2">
-                                </div> -->
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">City</label>
-                                    <input type="text" class="form-control" id="city" name="city"
-                                        placeholder="Enter City">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">State</label>
-                                    <input type="text" class="form-control" id="state" name="state"
-                                        placeholder="Enter State">
-                                </div>
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">zip</label>
-                                    <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter Zip"
-                                        required>
-                                </div> -->
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">Country</label>
-                                    <input type="text" class="form-control" id="country" name="country"
-                                        placeholder="Enter Country" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label">Phone Number</label>
-                                    <input type="text" class="form-control" id="phone" name="phone"
-                                        placeholder="Enter Phone" onkeup="phoneno()" minlength="10" maxlength="10"
-                                        required pattern="[0-9]{10}">
-                                </div>
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">Esewa Number</label>
-                                    <input type="text" class="form-control" id="credit_card_number"
-                                        name="credit_card_number" placeholder="Enter Credit Card Number"
-                                        onkeup="creditcard()" minlength="10" maxlength="10" required
-                                        pattern="[0-9]{10}">
-                                </div> -->
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">CVV</label>
-                                    <input type="text" class="form-control" id="cvv" name="cvv" pattern="[0-9]{3}"
-                                        placeholder="Enter CVV" onkeup="cvv()" required minlength="3" maxlength="3">
-                                </div> -->
-
-
-                                <script>
-                                function phoneno() {
-                                    $('#phone').keypress(function(e) {
-                                        var a = [];
-                                        var k = e.which;
-
-                                        for (i = 48; i < 58; i++)
-                                            a.push(i);
-
-                                        if (!(a.indexOf(k) >= 0))
-                                            e.preventDefault();
-                                    });
-                                }
-
-                                // function creditcard() {
-                                //     $('#phone').keypress(function(e) {
-                                //         var a = [];
-                                //         var k = e.which;
-
-                                //         for (i = 48; i < 64; i++)
-                                //             a.push(i);
-
-                                //         if (!(a.indexOf(k) >= 0))
-                                //             e.preventDefault();
-                                //     });
-                                // }
-
-                                // function cvv() {
-                                //     $('#phone').keypress(function(e) {
-                                //         var a = [];
-                                //         var k = e.which;
-
-                                //         for (i = 48; i < 51; i++)
-                                //             a.push(i);
-
-                                //         if (!(a.indexOf(k) >= 0))
-                                //             e.preventDefault();
-                                //     });
-                                // }
-                                </script>
-
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">Expiration Month</label>
-                                    <select name="month" class="form-control" id="month">
-                                        <?php for ($i = 1; $i <= 12; $i++): ?>
-                                        <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>"><?= $i ?></option>
-                                        <?php endfor ?>
-                                    </select>
-                                </div> -->
-
-                                <!-- <div class="form-group">
-                                    <label for="inputName" class="control-label">Expiration Year</label>
-                                    <select name="year" class="form-control" id="year">
-                                        <?php for ($i = 2017; $i <= 2025; $i++): ?>
-                                        <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT) ?>"><?= $i ?></option>
-                                        <?php endfor ?>
-                                    </select>
-                                </div> -->
-
-                                <div class="form-group">
-                                    <label for="inputPassword" class="control-label">Password</label>
-                                    <div class="form-inline row">
-                                        <div class="form-group col-sm-6">
-                                            <input type="password" data-minlength="6" class="form-control"
-                                                name="password" id="password" placeholder="Password" required>
-                                            <div class="help-block">Minimum of 6 characters</div>
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <input type="password" class="form-control" name="passwordConfirm"
-                                                id="passwordConfirm" onkeyup="checkPassword();" placeholder="Confirm"
-                                                required>
-                                            <span id='message'></span>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="./login.php">Login</a>
                                     </div>
                                 </div>
 
-
-                                <div class="form-group">
-                                    <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="./signup.php">SignUp</a>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
 
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="slider_text ">
+                            <span>Get Started Today.</span>
+                            <h3>Empower change with 
+                                 support </h3>
+                            <p>With so much to consume and such little time, coming up <br>
+                                with relevant title ideas is essential</p>
+                            <a href="About.html" class="boxed-btn3">Learn More
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- slider_area_end -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.7/validator.js"></script>
+    <!-- reson_area_start  -->
+    <div class="reson_area section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb-55">
+                        <h3><span>Reason of Helping</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_reson">
+                        <div class="thum">
+                            <div class="thum_1">
+                                <img src="img1/help/1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="help_content">
+                            <h4>Collecting Fund</h4>
+                            <p> By raising money, organizations can cover operational costs, scale their impact, and
+                                address urgent needs effectively. FundHive helps to sustain and expand valuable work.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_reson">
+                        <div class="thum">
+                            <div class="thum_1">
+                                <img src="img1/help/2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="help_content">
+                            <h4>Project Funding</h4>
+                            <p> Many Projects require financial resources to get off the ground or to continue their
+                                work. Fundraising helps gather the necessary capital to bring these projects to
+                                fruition.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_reson">
+                        <div class="thum">
+                            <div class="thum_1">
+                                <img src="img1/help/3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="help_content">
+                            <h4>Support For Causes</h4>
+                            <p>Funds are collected to support charitable causes like medical, disaster relief. This
+                                financial support can be crucial for addressing urgent needs and driving meaningful
+                                change..</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- reson_area_end  -->
+
+
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-lg-6 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <h3 class="footer_title footer-logo">
+                                    FundHive
+                                </h3>
+                            </div>
+                            <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do
+                                <br> eiusmod tempor incididunt ut labore.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Sponsor</a></li>
+                                <li><a href="#">Fundraise</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contacts
+                            </h3>
+                            <div class="contacts">
+                                <p>9812345678 <br>
+                                    fundhive@gmail.com <br>
+                                    Butwal, Nepal
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- footer_end  -->
+
+    <!-- link that opens popup -->
+
+    <!-- JS here -->
+    <script src="js1/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js1/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js1/popper.min.js"></script>
+    <script src="js1/bootstrap.min.js"></script>
+    <script src="js1/owl.carousel.min.js"></script>
+    <script src="js1/isotope.pkgd.min.js"></script>
+    <script src="js1/ajax-form.js"></script>
+    <script src="js1/waypoints.min.js"></script>
+    <script src="js1/jquery.counterup.min.js"></script>
+    <script src="js1/imagesloaded.pkgd.min.js"></script>
+    <script src="js1/scrollIt.js"></script>
+    <script src="js1/jquery.scrollUp.min.js"></script>
+    <script src="js1/wow.min.js"></script>
+    <script src="js1/nice-select.min.js"></script>
+    <script src="js1/jquery.slicknav.min.js"></script>
+    <script src="js1/jquery.magnific-popup.min.js"></script>
+    <script src="js1/plugins.js"></script>
+    <script src="js1/gijgo.min.js"></script>
+    <!--contact js-->
+    <script src="js1/contact.js"></script>
+    <script src="js1/jquery.ajaxchimp.min.js"></script>
+    <script src="js1/jquery.form.js"></script>
+    <script src="js1/jquery.validate.min.js"></script>
+    <script src="js1/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

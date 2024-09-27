@@ -41,37 +41,35 @@ if (
         echo $sql;
         if ($conn->query($sql) === TRUE) {
 
-            $credit_card_insert = "insert into CREDIT_CARD VALUES ('" . $credit_card_number . "','" . $cvv . "','" . $month . "','" . $year . "','" . $email . "');";
-            if ($conn->query($credit_card_insert) === TRUE) {
-                echo "Success Record Inserted";
-                //session_destroy();
-                session_start();
-                $_SESSION['email'] = $_POST['email'];
-                header('location: homepage.php');
-            }
+            echo "Success Record Inserted";
+            //session_destroy();
+            session_start();
+            $_SESSION['email'] = $_POST['email'];
+            header('location: homepage.php');
+
         } else {
             ?>
-<script>
-alert("Registration not successful.");
-window.location.href = 'index.php';
-</script>
-<?php
+            <script>
+                alert("Registration not successful.");
+                window.location.href = 'index.php';
+            </script>
+            <?php
         }
     } else {
         ?>
-<script>
-alert("The passwords do not match!")
-window.location.href = 'index.php';
-</script>
-<?php
+        <script>
+            alert("The passwords do not match!")
+            window.location.href = 'index.php';
+        </script>
+        <?php
     }
     # code...
 } else {
     ?>
-<script>
-alert("The required fields are not valid")
-window.location.href = 'index.php';
-</script>
-<?php
+    <script>
+        alert("The required fields are not valid")
+        window.location.href = 'index.php';
+    </script>
+    <?php
 }
 ?>

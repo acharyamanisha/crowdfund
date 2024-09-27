@@ -66,7 +66,7 @@ $row = $result->fetch_assoc();
             <div class='col-sm-20 col-md-16 user-details'>
                 <table>
                     <tr>
-                        <td style="padding:0 30px 0 0px;">
+                        <td style="padding:0px 0 0px;">
                             <?php
                             if (is_null($row['PHOTO'])) {
 
@@ -77,12 +77,12 @@ $row = $result->fetch_assoc();
                             } else {
                                 ?>
                             <img src='data:image;base64,<?php echo $row['PHOTO']; ?>' alt='Project Pic'
-                                title='Project Pic' style="width:128px;height:128px">
+                                title='Project Pic' style="width:100%; height:200px">
                             <?php
                             } ?>
                         </td>
 
-                        <td style="padding:0 0px 0 30px;">
+                        <!-- <td style="padding:0 0px 0 30px;">
 
                             <?php
                             $video= $row['VIDEO'];
@@ -98,7 +98,7 @@ $row = $result->fetch_assoc();
                             not support the video tag.</video></div>";
 
                             ?>
-                        </td>
+                        </td> -->
                     </tr>
                 </table>
 

@@ -4,22 +4,28 @@ require 'dbconn.php';
 
 <head>
     <style>
-    nav {
-        background-color: #669bbc !important;
-        border: none !important;
-        margin-top: -20px !important;
+        nav {
+            background-color: #669bbc !important;
+            border: none !important;
+            margin-top: -20px !important;
 
-    }
+        }
 
 
 
-    nav a {
-        color: black !important;
-    }
+        nav a {
+            color: black !important;
+        }
 
-    .dropdown-menu a {
-        color: white !Important;
-    }
+        .dropdown-menu a {
+            color: white !Important;
+        }
+
+        .navbar {
+            background-color: #2196f3 !important;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
     </style>
 </head>
 <nav class="navbar navbar-default navbar-light bg-light">
